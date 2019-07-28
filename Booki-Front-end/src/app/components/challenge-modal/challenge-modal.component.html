@@ -1,0 +1,66 @@
+<div
+  id="frameModalTop"
+  aria-labelledby="myModalLabel"
+  aria-hidden="true"
+  role="dialog"
+>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button
+          type="button"
+          class="close"
+          aria-label="Close"
+          (click)="closeModal()"
+        >
+          <p class="closable">×</p>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-md-4">
+            <!--Carousel Wrapper-->
+            <!--First slide-->
+            <img
+              class="d-block w-75 mb-4 ml-4 "
+              [src]="imageUrl"
+              alt="First slide"
+            />
+            <!--/First slide-->
+          </div>
+          <div class="col-md-7 mt-2">
+            <h3 class="h3-responsive product-name">
+              <strong>{{ title }}</strong>
+            </h3>
+            <h5
+              class="h5-responsive product-name mt-2"
+              *ngIf="component === 'ChallengesDone'"
+            >
+              <strong>Accomplished Challenge</strong>
+            </h5>
+            <!--
+          <h5 class="h5-responsive product-name" *ngIf="component !== 'ChallengesDone' ">
+            <strong>Challenge Non Accomplie</strong>
+        </h5>
+        -->
+            <p class="mt-3 textLus">
+              <i class="fa fa-check fa-lg green-text"></i>
+              {{ nbreTotalLivre }} books completed
+            </p>
+            <!--
+          <p class="mt-3 textLus" *ngIf="component !== 'ChallengesDone' "> <i class="fa fa-check fa-lg grey-text"></i>   {{nbLivreDone}} livres lus / {{ nbreTotalLivre }} </p>
+          -->
+
+            <div class="text-center mt-3">
+              <a [href]="getEmailBody()" class="size mt-3 black-text">
+                <i class="fa fa-share-alt orange-text mr-2"></i> &nbsp;<u
+                  ><strong>Share your success</strong></u>
+              </a>
+            </div>
+          </div>
+          <!-- /.Add to Cart -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

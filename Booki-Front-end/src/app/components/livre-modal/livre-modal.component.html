@@ -1,0 +1,134 @@
+<div
+  id="frameModalTop"
+  aria-labelledby="myModalLabel"
+  aria-hidden="true"
+  role="dialog"
+>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button
+          type="button"
+          class="close"
+          aria-label="Close"
+          (click)="closeModal()"
+        >
+          <p class="closable">×</p>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-md-5">
+            <!--Carousel Wrapper-->
+            <!--First slide-->
+            <img
+              class="d-block w-100"
+              [src]="sanitize(imageUrl)"
+              alt="First slide"
+            />
+            <!--/First slide-->
+          </div>
+          <div class="col-md-7">
+            <h4 class="h4-responsive product-name">
+              <strong>{{ titre }}</strong>
+            </h4>
+            <h6 class="h6-responsive product-name">
+              <strong>de {{ auteur }}</strong>
+            </h6>
+            <p>{{ description }}</p>
+
+            <mat-checkbox
+              #check
+              class="size mt-3 checkText"
+              *ngIf="component === 'ListeLecture'"
+              [indeterminate]="true"
+              (change)="onCheckChange(check.checked)"
+              >Book completed <span *ngIf="!check.checked">?</span>
+            </mat-checkbox>
+
+            <a
+              class="size mt-3 black-text"
+              [href]="getEmailBody()"
+              *ngIf="component === 'LivreDone'"
+              ><i class="fa fa-envelope fa-lg orange-text"></i> &nbsp;&nbsp;<u
+                ><strong>Recommend this book </strong></u
+              ></a
+            >
+
+            <div class="row" *ngIf="checked || component === 'LivreDone'">
+              <p
+                class="pl-3 mt-4 col-md-5 mb-1 checkText"
+                *ngIf="component === 'ListeLecture'"
+              >
+                Review :
+              </p>
+              <p
+                class="pl-3 mt-4 col-md-5 mb-1 checkText"
+                *ngIf="component === 'LivreDone'"
+              >
+                Review :
+              </p>
+
+              <bar-rating
+                class="pl-3 pt-0 rating-text col-md-3"
+                [max]="5"
+                name="rating"
+                [(ngModel)]="rate"
+                (rateChange)="onRateChange($event)"
+              ></bar-rating>
+            </div>
+
+            <div class="text-center">
+              <button
+                mdbBtn
+                color="primary"
+                class="waves-light mt-4"
+                (click)="onAddToReadingList()"
+                *ngIf="
+                  !exist &&
+                  component !== 'ListeLecture' &&
+                  component !== 'LivreDone'
+                "
+                mdbWavesEffect
+              >
+                <i class="fa fa-plus ml-2" aria-hidden="true"></i>&nbsp; To
+                Reading List
+              </button>
+
+              <button
+                mdbBtn
+                color="danger"
+                class="waves-light mt-4"
+                (click)="onRemoveFromReadingList()"
+                *ngIf="
+                  exist &&
+                  component !== 'ListeLecture' &&
+                  component !== 'LivreDone'
+                "
+                mdbWavesEffect
+              >
+                <i class="fa fa-trash ml-2" aria-hidden="true"></i> &nbsp;
+                Delete book
+              </button>
+
+              <button
+                mdbBtn
+                color="link"
+                class="waves-light mt-4"
+                (click)="onRemoveFromReadingList()"
+                *ngIf="
+                  (exist && component === 'ListeLecture') ||
+                  component === 'LivreDone'
+                "
+                mdbWavesEffect
+              >
+              Remove from the list
+              </button>
+            </div>
+          </div>
+          <!-- /.Add to Cart -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

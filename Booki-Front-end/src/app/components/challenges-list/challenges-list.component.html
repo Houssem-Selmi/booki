@@ -1,0 +1,79 @@
+<app-navbar-user-welcome></app-navbar-user-welcome>
+
+<div class=" row d-flex justify-content-center mt-3 w-100">
+  <div class="col-md-5 d-flex justify-content-center mt-4 ">
+    <a (click)="alire()" [ngClass]="alireClasse"
+      ><strong
+        >&nbsp;<i class="fa fa-trophy fa-lg orange-text mr-1"></i>Accomplished
+        challenges</strong
+      ></a
+    >
+  </div>
+  <div class="col-md-5 d-flex justify-content-center mt-4">
+    <a [ngClass]="livreLusClasse" (click)="livreLus()"
+      ><strong
+        ><i class="fa fa-list grey-text mr-1"></i>&nbsp; Challenges List</strong
+      ></a
+    >
+  </div>
+</div>
+
+<section class="text-center m-3" *ngIf="component === 'ChallengesDone'">
+  <div class="row d-flex justify-content-center mt-5">
+    <!-- reading list card-->
+    <div *ngFor="let challenge of challengesDone" class="col-md-3">
+      <app-challenge
+        [nbreTotalLivre]="challenge.nbreTotalLivre"
+        [component]="component"
+        [imageUrl]="challenge.imageUrl"
+        [title]="challenge.titre"
+        [nbLivreDone]="nbreLivreDone"
+      ></app-challenge>
+    </div>
+
+    <!-- reading list card-->
+
+    <!-- Challenges card-->
+  </div>
+</section>
+<!--Section: Features v.1-->
+<div class="container d-flex justify-content-center mt-4">
+  <div class=" w-75 h-auto " *ngIf="component === 'AllChallenges'">
+    <div *ngFor="let challenge of challengesList">
+      <app-challenge-default-card
+        [description]="challenge.description"
+        [nbreTotalLivre]="challenge.nbreTotalLivre"
+        [component]="component"
+        [imageUrl]="challenge.imageUrl"
+        [title]="challenge.titre"
+        [nbLivreDone]="nbreLivreDone"
+      ></app-challenge-default-card>
+    </div>
+  </div>
+</div>
+
+<!--Second page first section -->
+
+<!-- Spinner -->
+<div
+  *ngIf="showSpinner && component === 'ChallengesDone' && !serverDown"
+  class="mt-5 align-middle mr-5 d-flex justify-content-center"
+>
+  <mat-spinner class="mt-5" [diameter]="50"></mat-spinner>
+</div>
+<div
+  class="mt-5 d-flex justify-content-center emptyState"
+  *ngIf="noAchievedChallenges && component === 'ChallengesDone'"
+>
+  <p class="mt-5">
+    Pas de <strong>Challenges</strong> Terminés ... <strong></strong>
+  </p>
+  <br />
+</div>
+
+<div
+  *ngIf="serverDown && component === 'AllChallenges'"
+  class="d-flex emptyState justify-content-center mt-5"
+>
+  <p class="mt-5"><strong> Probléme de connexion ... </strong></p>
+</div>

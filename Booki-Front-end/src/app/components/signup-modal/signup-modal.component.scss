@@ -1,0 +1,29 @@
+.modal-dialog .modal-content .modal-header {
+  border-top-left-radius: 0.125rem;
+  border-top-right-radius: 0.125rem;
+  background: rgb(70, 87, 184);
+}
+
+.close:not(:disabled):not(.disabled):hover, .close:not(:disabled):not(.disabled):focus {
+  color: #fff;
+  text-decoration: none;
+  opacity: .75;
+}
+
+.close {
+  float: right;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1;
+  color: #fff;
+  text-shadow: 0 1px 0 #fff;
+  opacity: .5;
+}
+
+.left {
+  margin-left: 27px !important;
+}
+
+.text {
+  font-size: 1.2em;
+}

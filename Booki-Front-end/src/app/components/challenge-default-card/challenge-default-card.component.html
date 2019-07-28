@@ -1,0 +1,18 @@
+<div class="border border2 mt-3">
+  <div class=" m-3 row w-100 h-auto   d-flex justify-content-start  ">
+    <div class="col-md-2 text-left">
+      <img [src]="imageUrl" width="65" height="94" />
+    </div>
+    <div class="col-md-6 mt-4  text-left">
+      <p class="chTitle">
+        <strong>{{ title }} : </strong> {{ description }}
+      </p>
+    </div>
+    <div class="col-md-3 mt-4 text-left   ">
+      <p>
+        <strong> {{ nbLivreDone }} / {{ nbreTotalLivre }} Livres Lus </strong>
+        &nbsp; <i [ngClass]="checkClass" class="fa fa-check fa-lg "></i>
+      </p>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,49 @@
+<div class="media">
+  <div class="view overlay mr-3 ml-2">
+    <img
+      class="d-flex "
+      [src]="sanitize(imageUrl)"
+      alt="Generic placeholder image"
+    />
+    <div
+      class="mask flex-center rgba-black-strong"
+      (click)="modal.show()"
+      style="cursor: pointer;"
+    >
+      <a class="white-text">Discover</a>
+    </div>
+  </div>
+  <div class="media-body ">
+    <h5
+      class="mt-0 mb-1 font-weight-bold"
+      (click)="modal.show()"
+      style="cursor: pointer;"
+    >
+      {{ titre }}
+    </h5>
+    <p class="auteur">de {{ auteur }}</p>
+    <p>{{ descriptionMod }}</p>
+  </div>
+</div>
+<!--
+1/ on passe modal vers le app-livre-modal car à l'interieur de ce component y'a méthode modal.close()
+2/parent : livre component is waiting for an event to be fired from whild : app livre modal
+-->
+<app-livre-modal
+  (addToReadingList)="onAddtoListeLecture()"
+  (bookDoneEmit)="onBookDone($event)"
+  (rateChange)="onRateChange($event)"
+  (removeFromReadingList)="onRemoveFromReadingList()"
+  mdbModal
+  #modal="mdbModal"
+  class="modal fade"
+  style="overflow-y: auto"
+  [modal]="modal"
+  [isbn]="isbn"
+  [titre]="titre"
+  [auteur]="auteur"
+  [description]="description"
+  [imageUrl]="imageUrl"
+  [component]="component"
+  [rating]="rating"
+></app-livre-modal>

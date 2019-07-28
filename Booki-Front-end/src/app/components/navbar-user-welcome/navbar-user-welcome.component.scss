@@ -1,0 +1,63 @@
+
+.itemSelected:hover {
+  border-bottom : 2px solid #4285F4;
+  }
+
+  .connectBorder { border: 1.5px solid !important;
+  }
+
+
+
+  // Extra small devices (portrait phones, less than 576px)
+@media (max-width: 575px) {
+.connectBorder { border:none !important;
+
+
+}
+}
+
+
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) and (max-width: 767px) {
+  .connectBorder { border:none !important;
+  }
+
+
+}
+
+.capitalize {
+  text-transform: capitalize;
+}
+
+
+
+.pointer {cursor: pointer;}
+
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) and (max-width: 991px) {
+  .connectBorder { border:none !important;
+  }
+
+
+ }
+
+
+.media p {
+  font-size: 1.1em;
+}
+
+.popover{
+  width:600px !important;
+}
+
+
+p {
+  margin-bottom: 0px !important;
+}
+
+
+.selectedPop:hover {
+  text-decoration: underline;
+}

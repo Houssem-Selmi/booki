@@ -1,0 +1,124 @@
+<!-- Navbar secondPage-->
+<header class="h-100">
+  <mdb-navbar
+    SideClass="navbar navbar-expand-lg navbar-light white lighten-4 p-0"
+    [containerInside]="true"
+  >
+    <mdb-navbar-brand class="">
+      <a class="logo navbar-brand" routerLink="/">
+        <img src="assets/booki.png" height="60" alt="" />
+      </a>
+    </mdb-navbar-brand>
+    <links class="d-flex justify-content-start">
+      <ul class="navbar-nav p-0">
+        <li class="nav-item waves-light mr-4 ml-1 itemSelected" mdbWavesEffect>
+          <a
+            class="nav-link font-weight-normal"
+            [routerLink]="['/toplivres']"
+            routerLinkActive="router-link-active"
+            >Best Books</a
+          >
+        </li>
+
+        <li class="nav-item waves-light itemSelected mr-4">
+          <a
+            class="nav-link font-weight-normal"
+            [routerLink]="['/listelectures']"
+            >&nbsp;Reading list
+          </a>
+        </li>
+        <li class="nav-item waves-light itemSelected mr-4" mdbWavesEffect>
+          <a class="nav-link font-weight-normal" [routerLink]="['/challenges']">
+            <i class="fa fa-trophy fa-lg orange-text"></i> Challenges</a
+          >
+        </li>
+        <!--
+        <li class="nav-item waves-light itemSelected mr-5 " mdbWavesEffect>
+            <a class="nav-link font-weight-normal" [routerLink]="['/profile']"> <i class="fa fa-user fa-lg grey-text"></i> Profile</a>
+          </li>
+
+    -->
+
+        <!--
+        <li class="nav-item waves-light border border-dark rounded connectBorder"   mdbWavesEffect>
+          <a class="nav-link font-weight-normal" routerLink="/" (click)="clearCach()">Se déconnecter</a>
+        </li>
+-->
+      </ul>
+    </links>
+
+    <links class="d-flex justify-content-end w-100">
+      <ul class="navbar-nav p-0">
+        <li
+          placement="bottom"
+          [mdbPopover]="popTemplate"
+          class="nav-item waves-light  pointer "
+          mdbWavesEffect
+        >
+          <div class="row w-100">
+            <div class="col-md-4">
+              <div class="avatar ">
+                <img
+                  width="45"
+                  height="45"
+                  [src]="imageRes"
+                  class="rounded-circle mt-1"
+                />
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <ng-template #popTemplate class="w-100">
+          <div class="row">
+            <div class="col-md-5 mt-3 ml-1">
+              <div class="media">
+                <div>
+                  <img
+                    class="d-flex rounded-circle"
+                    width="85"
+                    height="85"
+                    [src]="imageRes"
+                    alt="Generic placeholder image"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="col-md-5 mt-2 ml-1 mr-4 mb-3">
+              <div class="row ">
+                <div>
+                  <p
+                    style="cursor: pointer;"
+                    class="selectedPop capitalize "
+                    [routerLink]="['/profile']"
+                  >
+                    <strong>{{ username }}</strong>
+                  </p>
+                  <p class="grey-text ">{{ email }}</p>
+                  <p
+                    style="cursor: pointer;"
+                    class="selectedPop mt-1"
+                    [routerLink]="['/welcome']"
+                  >
+                    <i class="fa fa-home fa-lg blue-text ">&nbsp;</i>Home
+                  </p>
+                  <p
+                    style="cursor: pointer;"
+                    class="selectedPop mt-2"
+                    routerLink="/"
+                    (click)="clearCach()"
+                  >
+                    <i class="fa fa-close fa-lg grey-text ">&nbsp;</i>Logout
+                  </p>
+                </div>
+                <div></div>
+              </div>
+            </div>
+          </div>
+        </ng-template>
+      </ul>
+    </links>
+  </mdb-navbar>
+</header>
+
+<!-- Navbar secondPage-->

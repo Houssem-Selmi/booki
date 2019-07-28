@@ -1,0 +1,36 @@
+<div class="box-shadow m-3">
+  <h6 class="h6 pt-3">{{ title }}</h6>
+  <hr />
+  <img
+    [src]="imageUrl"
+    class="img-fluid pointer"
+    height="65"
+    (click)="modal.show()"
+    width="90"
+  />
+  <div>
+    <button
+      type="button"
+      mdbBtn
+      color="link"
+      class="btn-text"
+      (click)="modal.show()"
+    >
+    Discover
+    </button>
+  </div>
+</div>
+
+<app-challenge-modal
+  [component]="component"
+  [title]="title"
+  [imageUrl]="imageUrl"
+  [nbLivreDone]="nbLivreDone"
+  mdbModal
+  #modal="mdbModal"
+  class="modal fade"
+  style="overflow-y: auto"
+  [modal]="modal"
+  [nbreTotalLivre]="nbreTotalLivre"
+>
+</app-challenge-modal>

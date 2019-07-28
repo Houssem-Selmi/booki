@@ -1,0 +1,111 @@
+<app-navbar-login></app-navbar-login>
+
+<div class=" pt-5 mt-1">
+  <div class="row w-100">
+    <div class="col-md-5 ml-5 d-flex justify-content-start ">
+      <img src="assets/loginPage.svg" width="400" height="400" />
+    </div>
+    <div
+      class="col-md-5 d-flex justify-content-center align-items-start landingText "
+    >
+      <div class="col ml-3">
+        <div>
+          <div class="alert alert-info" role="alert">
+            Vous devez vous connecter pour continuer.
+          </div>
+          <div
+            id="frameModalTop"
+            aria-labelledby="myModalLabel"
+            aria-hidden="true"
+            role="dialog"
+          >
+            <div class="modal-dialog  " role="document">
+              <div class="modal-content">
+                <div class="modal-body mx-2">
+                  <form class="modal-body mx-2" [formGroup]="signinForm">
+                    <div class="md-form mb-5">
+                      <i class="fa fa-envelope prefix grey-text"></i>
+                      <input
+                        type="email"
+                        (focus)="userNotFound = false"
+                        id="defaultForm-email-signinP"
+                        [mdbValidate]="false"
+                        formControlName="loginFormModalEmail"
+                        class="form-control validate"
+                        mdbInputDirective
+                      />
+                      <label for="defaultForm-email">Votre email</label>
+                    </div>
+
+                    <div class="md-form ">
+                      <i class="fa fa-lock prefix grey-text"></i>
+                      <input
+                        type="password"
+                        (focus)="passFocus()"
+                        (keydown)="onKeydown($event)"
+                        id="defaultForm-pass-signinO"
+                        [mdbValidate]="false"
+                        formControlName="loginFormModalPassword"
+                        class="form-control validate"
+                        mdbInputDirective
+                      />
+                      <label for="defaultForm-pass">Votre mot de passe</label>
+                    </div>
+                  </form>
+
+                  <div class="d-flex justify-content-center">
+                    <button
+                      mdbBtn
+                      [disabled]="!signinForm.valid"
+                      color="indigo"
+                      class="waves-light"
+                      (click)="onConnect()"
+                      mdbWavesEffect
+                    >
+                      connexion
+                    </button>
+                  </div>
+
+                  <!-- Spinner -->
+                  <div
+                    *ngIf="showSpinner"
+                    class="mt-4 d-flex align-middled-flex justify-content-center"
+                  >
+                    <mat-spinner [diameter]="27"></mat-spinner>
+                  </div>
+
+                  <div
+                    class="alert alert-danger mt-3 align-middle d-flex justify-content-center"
+                    role="alert"
+                    *ngIf="userNotFound"
+                  >
+                    <strong>Cet utilisateur n'existe pas !</strong>
+                  </div>
+                </div>
+                <div class="modal-footer d-flex justify-content-start">
+                  <p class="black-text">
+                    Vous n'avez pas de compte ?
+                    <a>
+                      <strong (click)="modalSignupL.show()">Inscription</strong>
+                    </a>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-signup-modal
+  [component]="component"
+  mdbModal
+  #modalSignupL="mdbModal"
+  class="modal fade"
+  style="overflow-y: auto"
+  [modal]="modalSignupL"
+>
+</app-signup-modal>
+<!-- container landing part-->

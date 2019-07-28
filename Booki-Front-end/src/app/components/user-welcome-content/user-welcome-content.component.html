@@ -1,0 +1,62 @@
+<!--Second page first section -->
+
+<section class="text-center m-3">
+  <!--Section heading-->
+  <h3 class="h4 mt-4 font-weight-bold " [innerText]="welcome">
+    <strong></strong>
+  </h3>
+
+  <div class="row d-flex justify-content-center">
+    <!-- reading list card-->
+    <div class="col-md-3 box-shadow m-3">
+      <h5 class="h6 mt-3">Your reading list</h5>
+      <hr />
+      <img
+        src="assets/final.jpg"
+        [routerLink]="['/listelectures']"
+        class="img-fluid pointer"
+        height="250"
+        width="250"
+      />
+      <div>
+        <button
+          type="button"
+          mdbBtn
+          color="link"
+          class="btn-text"
+          [routerLink]="['/listelectures']"
+        >
+          Enter
+        </button>
+      </div>
+    </div>
+
+    <!-- Challenges card-->
+
+    <div class="col-md-3 box-shadow m-3">
+      <h5 class="h6 mt-3">Your Challenges</h5>
+      <hr />
+      <img
+        src="assets/trophy.jpg"
+        [routerLink]="['/challenges']"
+        class="img-fluid pointer"
+        height="250"
+        width="250"
+      />
+      <div>
+        <button
+          type="button"
+          [routerLink]="['/challenges']"
+          mdbBtn
+          color="link"
+          class="btn-text pb-0"
+        >
+          Discover
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+<!--Section: Features v.1-->
+
+<!--Second page first section -->

@@ -1,0 +1,14 @@
+<div class="md-form form-inline form-sm d-flex justify-content-center">
+  <i class="fa fa-search" aria-hidden="true"></i>
+  <input
+    mdbInputDirective
+    type="text"
+    id="form1"
+    class="ml-3 form-control w-50"
+    placeholder="Chercher .."
+    [(ngModel)]="searchText"
+    [mdbValidate]="false"
+    (keyup)="changeit()"
+    aria-label="Search"
+  />
+</div>

@@ -1,0 +1,92 @@
+<div
+  id="frameModalTop"
+  aria-labelledby="myModalLabel"
+  aria-hidden="true"
+  role="dialog"
+>
+  <div class="modal-dialog  " role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 white-text ">
+          <i class="fa fa-user white-text mr-2"></i>Sign in
+        </h4>
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+          (click)="onClose()"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-2">
+        <form class="modal-body mx-2" [formGroup]="signinForm">
+          <div class="md-form mb-5">
+            <i class="fa fa-envelope prefix grey-text"></i>
+            <input
+              type="email"
+              (focus)="userNotFound = false"
+              id="defaultForm-email-signin"
+              [mdbValidate]="false"
+              formControlName="loginFormModalEmail"
+              class="form-control validate"
+              mdbInputDirective
+            />
+            <label for="defaultForm-email">Your email</label>
+          </div>
+
+          <div class="md-form ">
+            <i class="fa fa-lock prefix grey-text"></i>
+            <input
+              type="password"
+              (focus)="passFocus()"
+              (keydown)="onKeydown($event)"
+              (focus)="userNotFound = false"
+              id="defaultForm-pass-signin"
+              [mdbValidate]="false"
+              formControlName="loginFormModalPassword"
+              class="form-control validate"
+              mdbInputDirective
+            />
+            <label for="defaultForm-pass">Your password</label>
+          </div>
+        </form>
+
+        <div class="d-flex justify-content-center">
+          <button
+            mdbBtn
+            [disabled]="!signinForm.valid"
+            color="indigo"
+            class="waves-light"
+            (click)="onConnect()"
+            mdbWavesEffect
+          >
+            Validate
+          </button>
+        </div>
+
+        <!-- Spinner -->
+        <div
+          *ngIf="showSpinner"
+          class="mt-4 d-flex align-middled-flex justify-content-center"
+        >
+          <mat-spinner [diameter]="27"></mat-spinner>
+        </div>
+
+        <div
+          class="alert alert-danger mt-3 align-middle d-flex justify-content-center"
+          role="alert"
+          *ngIf="userNotFound"
+        >
+          <strong>User not found !</strong>
+        </div>
+      </div>
+      <div class="modal-footer d-flex justify-content-start">
+        <p class="black-text">
+          Not a member ?<a> <strong (click)="openSignup()">Sign up</strong> </a>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

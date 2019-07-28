@@ -1,0 +1,175 @@
+<!-- header -->
+<app-navbar-user-welcome> </app-navbar-user-welcome>
+<div class=" section-dark">
+  <div name="bruce" id="bruce" class=" section-dark mb-2  w-100 ">
+    <div class=" ml-4 mr-4">
+      <div class="row ">
+        <div class="col-md-3 pt-5 text-center ">
+          <input
+            style="display: none"
+            type="file"
+            accept="image/png, image/jpeg"
+            #fileInput
+            (change)="selectFile($event)"
+          />
+          <div class="card card-profile">
+            <div class="card-avatar">
+              <div class="view overlay">
+                <a><img class="imgf" [src]="imageRes" alt="..."/></a>
+                <div
+                  class="mask flex-center rgba-black-strong"
+                  (click)="fileInput.click()"
+                  style="cursor: pointer;"
+                >
+                  <a class="white-text">Change</a>
+                </div>
+              </div>
+            </div>
+            <div class="card-block ">
+              <a>
+                <div class="author">
+                  <h4 class="card-title capitalize txt">{{ username }}</h4>
+                  <h6 class="card-category mt-3 blue-text txt">
+                    <i class="fa fa-trophy fa-lg orange-text"></i>&nbsp;
+                    {{ level }} Reader
+                  </h6>
+                </div>
+              </a>
+              <div class="text-center mb-3">
+                <small>{{ email }}</small>
+              </div>
+              <p class=" text-center mt-4 mb-5">
+                <i class="fa fa-check fa-lg green-text"> </i>&nbsp;{{
+                  nbLivreDone
+                }}
+                books completed
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-9">
+          <div class="row ">
+            <mdb-card class="text-white mb-3 w-100" bgColor="bg-primary">
+              <mdb-card-body>
+                <mdb-card-title class="d-flex justify-content-start">
+                  <h5>Profile</h5>
+                </mdb-card-title>
+                <mdb-card-text class="d-flex justify-content-start text-white"
+                  >Edit your personal information</mdb-card-text
+                >
+              </mdb-card-body>
+            </mdb-card>
+          </div>
+          <div class="row w-100">
+            <!-- start -->
+
+            <form class="modal-body box-shadow " [formGroup]="profileForm">
+              <div class="row">
+                <div class="col-md-5">
+                  <div class="md-form mb-5 ml-5 ">
+                    <input
+                      type="text"
+                      id="orangeForm-name-signup"
+                      class="form-control validate"
+                      [mdbValidate]="false"
+                      formControlName="signupFormModalUsername"
+                      mdbInputDirective
+                    />
+                    <label
+                      data-error="wrong"
+                      data-success="right"
+                      for="orangeForm-name"
+                      >Username</label
+                    >
+                  </div>
+
+                  <div class="md-form ml-5">
+                    <input
+                      type="password"
+                      (focus)="clearFields()"
+                      #pw
+                      id="defaultForm-pass-signupOld"
+                      [errorMessage]="mdpErrorMessage"
+                      [validateSuccess]="false"
+                      [validateError]="true"
+                      formControlName="loginFormModalPasswordOld"
+                      class="form-control validate"
+                      mdbInputDirective
+                    />
+                    <label for="defaultForm-pass">Old password</label>
+                  </div>
+                </div>
+
+                <div class="col-md-5 ml-5">
+                  <div class="md-form ">
+                    <input
+                      type="password"
+                      (focus)="clearFields()"
+                      #pw
+                      id="defaultForm-pass-signupNew"
+                      [errorMessage]="mdpErrorMessage"
+                      [validateSuccess]="false"
+                      [validateError]="true"
+                      formControlName="loginFormModalPasswordNew"
+                      class="form-control validate"
+                      mdbInputDirective
+                    />
+                    <label for="defaultForm-pass">New Password</label>
+                  </div>
+                  <div class="mb-4 left ">
+                    <password-strength-meter
+                      [password]="pw.value"
+                    ></password-strength-meter>
+                    <small>
+                      Your new password must contain at least 5 characters,
+                      numbers and special characters.</small
+                    >
+                  </div>
+                </div>
+                <div
+                  class="row rows d-flex justify-content-center w-100 mt-5 mb-5 pt-3"
+                >
+                  <div class="d-flex justify-content-center">
+                    <button
+                      mdbBtn
+                      color="blue"
+                      [disabled]="!profileForm.valid && !passItpass()"
+                      class="waves-light"
+                      (click)="onSauvegarder()"
+                      mdbWavesEffect
+                    >
+                      Save
+                    </button>
+                  </div>
+                  <div
+                    *ngIf="showSpinner"
+                    class="mt-4 d-flex align-middled-flex justify-content-center"
+                  >
+                    <mat-spinner [diameter]="27"></mat-spinner>
+                  </div>
+                  <div
+                    *ngIf="showSuccess"
+                    class="text mt-3  d-flex justify-content-center"
+                  >
+                    <a>
+                      <i class="fa fa-check green-text"> </i> Update Succeed
+                    </a>
+                  </div>
+                  <div
+                    *ngIf="showFail"
+                    class="text mt-3  d-flex justify-content-center"
+                  >
+                    <a> <i class="fa fa-check red-text"> </i> Update Failed </a>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+          <!-- end -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- jjjj -->
+</div>

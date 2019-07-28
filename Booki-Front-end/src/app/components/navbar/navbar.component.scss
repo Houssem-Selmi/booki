@@ -1,0 +1,73 @@
+
+
+
+
+.navbar {
+  background-color: transparent;
+}
+
+.pointer {cursor: pointer;}
+
+
+
+
+.connectBorder { border: 1.9px solid !important;
+}
+.connectBorder:hover { border: 1.9px solid #4285F4 !important;
+}
+
+.itemSelected:hover {
+border-bottom : 2px solid #4285F4;
+}
+
+
+  // Extra small devices (portrait phones, less than 576px)
+  @media (max-width: 575px) {
+    .connectBorder { border:none !important;
+      .connectBorder:hover {   border:none  !important;
+      }
+      .connectBorder:hover {     border-bottom : 2px solid #4285F4 !important;
+      }
+    }
+    }
+
+    // Small devices (landscape phones, 576px and up)
+    @media (min-width: 576px) and (max-width: 767px) {
+      .connectBorder { border:none !important;
+      }
+      .connectBorder:hover {   border:none  !important;
+      }
+      .connectBorder:hover {     border-bottom : 2px solid #4285F4 !important;
+      }
+
+    }
+
+    // Medium devices (tablets, 768px and up)
+    @media (min-width: 768px) and (max-width: 991px) {
+      .connectBorder { border:none !important;
+      }
+      .connectBorder:hover {   border:none  !important;
+      }
+      .connectBorder:hover {     border-bottom : 2px solid #4285F4 !important;
+      }
+
+     }
+
+
+     .media p {
+      font-size: 1.1em;
+    }
+
+    .popover{
+      width:600px !important;
+    }
+
+
+    p {
+      margin-bottom: 0px !important;
+    }
+
+
+    .selectedPop:hover {
+      text-decoration: underline;
+    }

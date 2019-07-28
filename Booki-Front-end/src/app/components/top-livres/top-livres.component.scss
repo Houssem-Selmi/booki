@@ -1,0 +1,40 @@
+.row.vdivide [class*='col-']:after {
+  background: grey;
+  width: 1px;
+  content: "";
+  display:block;
+  position: absolute;
+  top:0;
+  bottom: 0;
+  right: 0;
+  min-height: 70px;
+  padding: 0;
+}
+
+.media img {
+  width: 118px;
+  height: 178px;
+}
+
+
+.media p {
+  font-size: 1.1em;
+}
+
+.auteur{
+  font-size: 1.3em !important;
+  margin-bottom: 3px !important;
+}
+
+
+
+
+.wrapper {
+  display: grid;
+}
+.emptyState p {
+  font-size: 1.4em;
+}
+.serverDown{
+  font-size: 1.4em;
+}

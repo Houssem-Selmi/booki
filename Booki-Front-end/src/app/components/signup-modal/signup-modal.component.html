@@ -1,0 +1,131 @@
+<div
+  id="frameModalTop"
+  aria-labelledby="myModalLabel"
+  aria-hidden="true"
+  role="dialog"
+>
+  <div class="modal-dialog  " role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 white-text ">
+          <i class="fa fa-user white-text mr-2"></i>Sign up
+        </h4>
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+          (click)="onClose()"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+      <form class="modal-body mx-3" [formGroup]="profileForm">
+        <div class="modal-body mx-3">
+          <div class="md-form mb-5">
+            <i class="fa fa-user prefix grey-text"></i>
+            <input
+              type="text"
+              id="orangeForm-name-signup"
+              class="form-control validate"
+              [mdbValidate]="false"
+              formControlName="signupFormModalUsername"
+              mdbInputDirective
+            />
+            <label data-error="wrong" data-success="right" for="orangeForm-name"
+              >Username</label
+            >
+          </div>
+
+          <div class="md-form mb-5">
+            <i class="fa fa-envelope prefix grey-text"></i>
+            <input
+              type="email"
+              id="defaultForm-email-signup"
+              [validateSuccess]="false"
+              [validateError]="true"
+              [errorMessage]="emailErrorMessage"
+              formControlName="loginFormModalEmail"
+              class="form-control validate"
+              mdbInputDirective
+            />
+            <label for="defaultForm-email">Email</label>
+          </div>
+
+          <div class="md-form">
+            <i class="fa fa-lock prefix grey-text"></i>
+            <input
+              type="password"
+              #pw
+              id="defaultForm-pass-signup"
+              [validateSuccess]="false"
+              [validateError]="true"
+              [errorMessage]="mdpErrorMessage"
+              formControlName="loginFormModalPassword"
+              class="form-control validate"
+              mdbInputDirective
+            />
+            <label for="defaultForm-pass">Password</label>
+          </div>
+          <div class="mb-4 left">
+            <password-strength-meter
+              [password]="pw.value"
+            ></password-strength-meter>
+            <small
+              >Your password must contain at least 5 characters, numbers and
+              special characters.</small
+            >
+          </div>
+
+          <div class="d-flex justify-content-center">
+            <button
+              mdbBtn
+              color="indigo"
+              [disabled]="!profileForm.valid"
+              class="waves-light"
+              (click)="onSignUp()"
+              mdbWavesEffect
+            >
+              Sign up
+            </button>
+          </div>
+          <div
+            *ngIf="showSpinner"
+            class="mt-4 d-flex align-middled-flex justify-content-center"
+          >
+            <mat-spinner [diameter]="27"></mat-spinner>
+          </div>
+          <div
+            *ngIf="showSuccess && !showFail"
+            class="text mt-3 mb-2 d-flex justify-content-center"
+          >
+            <a>
+              <i class="fa fa-check green-text"> </i>
+              Inscription effectuée avec succès
+            </a>
+          </div>
+          <div
+            *ngIf="showFail"
+            class="text mt-3 mb-2 d-flex justify-content-center"
+          >
+            <a>
+              <i class="fa fa-check red-text"> </i>
+              Sign up Failed
+            </a>
+          </div>
+        </div>
+
+        <div
+          *ngIf="component === 'landingPage'"
+          class="modal-footer d-flex justify-content-start"
+        >
+          <p class="black-text">
+            Already have an account ?
+            <a> <strong (click)="onSigninOpen()">Log in</strong> </a>
+          </p>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

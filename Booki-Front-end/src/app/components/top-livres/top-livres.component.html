@@ -1,0 +1,103 @@
+<!-- header -->
+<app-navbar-user-welcome> </app-navbar-user-welcome>
+<!-- List top livres -->
+
+<div class="container mt-5 ">
+  <h2 class="h2-responsive black- ml-4 mb-5">
+    <strong>Découvrez les meilleurs livres du moment..</strong>
+  </h2>
+</div>
+
+<!-- Search form -->
+<app-search-livre (searchListen)="getSearchText($event)"></app-search-livre>
+
+<!-- Spinner -->
+<div
+  *ngIf="showSpinner"
+  class="d-flex justify-content-center pt-5 align-middle mr-5"
+>
+  <mat-spinner [diameter]="50"></mat-spinner>
+</div>
+
+<!-- Book List -->
+<div class="container ml-3 row vdivide mb-4 ">
+  <div class="col-md-6 mt-5 mb-1" *ngFor="let book of pagedItems">
+    <app-livre
+      (bookRemoved)="onBookRemoved($event)"
+      [isbn]="book.isbn"
+      [titre]="book.titre"
+      [imageUrl]="book.imageUrl"
+      [auteur]="book.auteur"
+      [description]="book.description"
+    ></app-livre>
+  </div>
+</div>
+
+<nav
+  *ngIf="!noBooks"
+  aria-label="Page navigation example"
+  class="d-flex justify-content-center "
+>
+  <ul class="pagination pagination-lg  pg-dark mt-5">
+    <li class="page-item" [ngClass]="{ disabled: pager.currentPage === 1 }">
+      <a class="page-link" mdbWavesEffect (click)="setPage(1)"> First</a>
+    </li>
+
+    <li class="page-item" [ngClass]="{ disabled: pager.currentPage === 1 }">
+      <a
+        class="page-link"
+        (click)="setPage(pager.currentPage - 1)"
+        mdbWavesEffect
+      >
+        <span aria-hidden="true">&laquo;</span>
+        <span class="sr-only">Previous</span>
+      </a>
+    </li>
+
+    <li
+      class="page-item"
+      *ngFor="let page of pager.pages"
+      [ngClass]="{ active: pager.currentPage === page }"
+    >
+      <a class="page-link" mdbWavesEffect (click)="setPage(page)">{{ page }}</a>
+    </li>
+
+    <li
+      class="page-item"
+      [ngClass]="{ disabled: pager.currentPage === pager.totalPages }"
+    >
+      <a
+        class="page-link"
+        (click)="setPage(pager.currentPage + 1)"
+        mdbWavesEffect
+      >
+        <span aria-hidden="true">&raquo;</span>
+        <span class="sr-only">Next</span>
+      </a>
+    </li>
+    <li
+      class="page-item"
+      [ngClass]="{ disabled: pager.currentPage === pager.totalPages }"
+    >
+      <a (click)="setPage(pager.totalPages)" class="page-link" mdbWavesEffect
+        >Last</a
+      >
+    </li>
+  </ul>
+</nav>
+
+<!-- no books Empty State -->
+
+<div
+  class="mt-5 d-flex justify-content-center emptyState"
+  *ngIf="noBooks && !serverDown"
+>
+  <p>
+    Pas de <strong>livres</strong> pour <strong>' {{ searchText }} '</strong>
+  </p>
+  <br />
+</div>
+
+<div *ngIf="serverDown" class="d-flex justify-content-center">
+  <p class="serverDown mt-4"><strong> Probléme de connexion ... </strong></p>
+</div>
