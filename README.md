@@ -36,6 +36,9 @@ Booki is an application that allows the management and tracking of user books re
 published to provide a fully working web application for developers who are interested in building
 modern web apps using  Spring Boot as a backend solution, and Angular 7 for the frontend.
 
+<img src="https://firebasestorage.googleapis.com/v0/b/booki-26bbf.appspot.com/o/about.gif?alt=media&token=38e55361-9146-42c3-8bfd-0b5ac09eea39
+">
+
 ## Feautures  
 
 ### Front-End 
