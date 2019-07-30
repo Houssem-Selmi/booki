@@ -36,9 +36,6 @@ Booki is an application that allows the management and tracking of user books re
 published to provide a fully working web application for developers who are interested in building
 modern web apps using  Spring Boot as a backend solution, and Angular 7 for the frontend.
 
-<img src="https://lh3.googleusercontent.com/ngCSMvUvRKoFHzygZZ2LMqZwapsMo0gMcs9get5wwxXgmuif6jvhsze0GMkqOlnQXpJuhiNcNA=w920-h620-no">
-
-
 ## Feautures  
 
 ### Front-End 
@@ -140,7 +137,7 @@ Verify the file 'src/environments/environment.ts '
 * Create a database with the name of ' bookidb '
 * Import the dump provided in the DATABASE_DUMP folder according to the database you will use
 	- Postgres  
-	  `psql -U postgres  bookidb <  postgres_booki.sql`
+	  `psql -U your_postgres_username  bookidb <  postgres_booki.sql`
 
 	<img src="https://lh3.googleusercontent.com/H6eJ92R0aVHM_Q0A7gf97-xA70U-ZuyUqf0WtCED7HWIYQSn2u3MpU1jiPGe4gcuBpfWB34sZ300C9vnLNJJblYRboKr3CQ-qqGzOr1lGfkrdMH7ekMK2CkaM9qK55O3O2KNZEYuY02L3Gg2np5Godp4gCFK8dQ7lzPAPAO-_4sPHJJU5ej8Qy0YCsEg7HzRPzAlqEFhZyzF9Xi0RaPEaqaH-8R2-IGg-4fqj9_3YS4YFNK6sENkoZVVNNeIfpeSq87TA4P-36Yy0cDQW8uYIJEVb0Petnv7p7OKBBGjOMFPcMZtyqauPlM8_v8EuzIO3tmanm7g2_fq-LgGPdsiicLflZ_V5OwK8D-cYV7mfcXrNDQODPKoJH26nrl1ZgXDTKNMjdRVNEyHKJhfIRfiWfAscRt0Ffznb3z9jn8Mhccwm0q4eWQf8BTZjj9SsGBDQYHFC1iJ35mOekSO3QQ_d_xQNuNzklic2z-Rkxzwz0xaAEAEcBB7T4qnmvtrOzZ90pMvqErrj8VnOuUhV-cG82K2YzFvfTwjPNFxBbROwcXWXxMHQ_EcDdt7gtRWtQnnHU23mbJyjS35ASfNw8LfRWMEPaZrDxi10Xed4CQBDhDr2JzyUQ2Tp1hiXmnDwgVNoQedsEOULusHcJlB65CovsxSazkrexCZqHImXRiX6zVe6Fm-xxhAcbxtE9G6RTbTbLGzVeYlumVE_1173uIIR4kr=w627-h316-no">	
 
