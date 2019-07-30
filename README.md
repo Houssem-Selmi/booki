@@ -36,7 +36,7 @@ Booki is an application that allows the management and tracking of user books re
 published to provide a fully working web application for developers who are interested in building
 modern web apps using  Spring Boot as a backend solution, and Angular 7 for the frontend.
 
-  <img src="https://lh3.googleusercontent.com/wPAP81U9_s_2a5BU44pMZcU4hCvg4Lx5hW4YIZcyHOlwag9qqbd6EH6yCpwRc94YmAjFSmV6na1TmIxusfJDW-zFAX9xVCdxkY6PCEJHgQndhOPMQd7BKnE4v43kWtd6vnglFC7eIzpU2QnexnfCg7eJI9JvYfkAw2GX6Rtrkjt-qgca6muzyDR4c3EjlQEU_J3970008bi-dBUGqoQq1oJTal8Qd4npgEAZm6afIZYWCW-aISSuqW-s0sDt5UBe_6IqaFTMS8_KdvG_TIoqu0rMn4osDpMJdsCoViqCwx10GIZSA5aO_7vJkz0Yai3a0QT123a-xxI-DfkrwLf-eT5ERaeRkR3lsh43i6iEkSDpHums-gJrlPYKi-GhV7GATILZjOKzml8ewPmlmXmX4382p9_UBdcG0F-llBf0_Hupe466r53r9cvC5Q5dK0Sx-7Aq2jc7iiZdI7xO51lSOckyUaSrCWDSOR6eQSmzj5zftfp_5uEnhvCyY1ccGcEl1HcnL6TuVutu8IuwX4Qi6nAbmMXFTD-OmLepIYvqhVoDL7NZrj1nxw2XlIyOmkLrjkZYgBSVy0qUMJ71er1VLn3wZNjHRkRg8ort6soJACfzO6dKA39FLsN89p_Eh5FmnQ7o8GYih_Tu8nvjS78WPX26bKAHW1E=w1333-h695-no">
+<img src="https://lh3.googleusercontent.com/ngCSMvUvRKoFHzygZZ2LMqZwapsMo0gMcs9get5wwxXgmuif6jvhsze0GMkqOlnQXpJuhiNcNA=w920-h620-no">
 
 
 ## Feautures  
